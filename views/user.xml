@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="user_course_form_view">
+        <field name="name">user.course_ids</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_simple_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='image_1920']" position="before">
+                <div class="oe_button_box" name="button_box">
+                    <button class="oe_stat_button" name="course_list" type="object" icon="fa-book">
+                        <field string="Courses" name="course_count" widget="statinfo"/>
+                    </button>
+                    <button class="oe_stat_button" name="facture_list" type="object" icon="fa-book">
+                        <field string="Factures" name="facture_count" widget="statinfo"/>
+                    </button>
+                </div>
+                <!--<field name="course_ids" widget="one2many_tags"/>-->
+            </xpath>
+        </field>
+    </record>
+</odoo>
